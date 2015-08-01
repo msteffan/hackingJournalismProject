@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+</head>
+<script src="js/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.2/mustache.js"></script>
+    <script>
+      var view = {
+        name : "Joe",
+        occupation : "Web Developer"
+      };
+      function loadtemp(){
+$.get('bootcards.mst', function(template) {
+        //var obj = getJSON();// [{headline: 'foo'}, {headline: 'bar'}];
+        var obj = [{"headline": "5 Millennial-Friendly Wines to Try",
+    "author": "Dave McIntyre",
+    "copy": "",
+    "blurb": "A selection of affordable and intriguing wines perfect for the summer.",
+     "url": "http://www.washingtonpost.com/lifestyle/food/5-millennial-friendly-wines-to-try/2015/07/12/fca00060-23f7-11e5-b77f-eb13a215f593_story.html",
+        "topics": "Wine, Millennial-Friendly, Food",
+        "minutes": 3
+        },
+    {"headline": "From Greece talks, a less united Europe emerges",
+        "author": "Anthony Faiola",
+        "copy": "A selection of affordable and intriguing wines perfect for the summer.",
+        "blurb": "Greece has never come as close as it is now to crashing out of the euro, providing what some nations see as a defining moment for Europe.",
+        "url": "articlePage.html",
+        "topics": "International, Politics, Finance, Greece",
+        "minutes": 3
+        },
+    {"headline": "5 Minutes with Aisha Tyler",
+      "author": "Helena Andrews",
+      "copy": "A selection of affordable and intriguing wines perfect for the summer.",
+      "blurb": "Aisha Tyler took five minutes to sip a cocktail and tell us about the time she made the president laugh.",
+      "url": "http://www.washingtonpost.com/blogs/reliable-source/wp/2014/10/21/5-minutes-with-aisha-tyler/",
+      "topics": "Comedy, Women",
+      "minutes": 5
+      },
+    {"headline": "Why Amy Schumer is officially the new John Oliver",
+      "author": "Emily Yahr",
+      "blurb": "Three makes a trend, so it’s official: Amy Schumer is the new John Oliver.",
+      "copy": "",
+      "url": "http://www.washingtonpost.com/blogs/style-blog/wp/2015/05/06/why-amy-schumer-is-officially-the-new-john-oliver/",
+      "topics": "Comedy, Women",
+      "minutes": 4
+  },
+     {"headline": "Scott Walker’s wife, toughened by life, is ready for fires of a campaign",
+        "author": "Mary Jordan",
+        "blurb": "Scott Walker refers to his wife as “my rock.” His wife, in many ways, adds steel to his spine.",
+        "copy": ""
+        "url": "http://www.washingtonpost.com/politics/scott-walkers-wife-toughened-by-life-adds-steel-to-the-gop-candidates-spine/2015/07/05/6133",
+        "topics": "Politics, Women",
+        "minutes": 10
+        },
+        {"headline": "Camille Cosby: A life spent juggling her role as public figure with desire to be private",
+           "author": "Manuel Roig-Franzia, Krissah Thompson and Mary Pat Flaherty",
+           "blurb": "Camille Cosby has straddled — sometimes uncomfortably — the role of public figure and the impulse to hold the world at arm’s length.",
+           "copy": ""
+           "url": "http://www.washingtonpost.com/lifestyle/style/camille-cosby-a-life-spent-juggling-her-role-as-public-figure-with-desire-to-be-private/2014/12/23/575ad31e-8528-11e4-9534-f79a23c40e6c_story.html?tid=pm_lifestyle_pop_b",
+           "topics": "Social, Women, Celebrities",
+           "minutes": 20
+           }
+    ]
+        console.log(obj);
+    var rendered = Mustache.render(template, obj);
+    $('#target').html(rendered);
+  });
+      }
+    </script>
+<body onload="loadtemp()" >
+<p id="target"></p>
+
+</body></html>
